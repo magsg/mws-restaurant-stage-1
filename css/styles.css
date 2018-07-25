@@ -162,10 +162,11 @@ nav h1 a {
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
-  margin-top: 30px;
+	margin-top: 30px;
   max-width: 100%;
   /* min-height: 248px; */
   min-width: 100%;
+	border-radius: 5px;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -287,3 +288,23 @@ nav h1 a {
 }
 
 /* ====================== Media Queries ====================== */
+
+@media screen and (min-width: 500px) {
+
+	#restaurants-list {
+		max-width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	#restaurants-list li {
+		max-width: 40%;
+		padding: 3%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	#restaurants-list .restaurant-img {
+		margin: 0;
+	}
+}
