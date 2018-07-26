@@ -326,6 +326,31 @@ nav h1 a {
 	}
 }
 
+@media screen and (min-width: 550px) {
+
+	#restaurant-container {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	}
+
+	#restaurant-img {
+		width: 50%;
+		order: 1;
+	}
+
+	#restaurant-hours {
+		width: 40%;
+		order: 2;
+	}
+
+#restaurant-address {
+	order: 3;
+	margin-top: 40px;
+}
+
+}
+
 @media screen and (min-width: 850px) {
 
 	#restaurants-list li {
@@ -334,4 +359,18 @@ nav h1 a {
 		margin: 0 0 2% 0;
 	}
 
+	#reviews-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+
+	#reviews-list li {
+		width: 40%;
+	}
+
+	.inside #map-container {
+		height: 40vh;
+	}
 }
