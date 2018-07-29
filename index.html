@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -21,15 +21,15 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map" aria-hidden="true"></div>
+      <div id="map" aria-label="Mapbox map application"></div>
     </section>
-    <section id="restaurants" tabindex="-1">
-      <div class="filter-options" tabindex="0">
+    <section id="restaurants">
+      <div class="filter-options">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="select neighborhood">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="select cuisine">
           <option value="all">All Cuisines</option>
         </select>
       </div>
