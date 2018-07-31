@@ -36,7 +36,7 @@ self.addEventListener('activate', function(event) {
       return Promise.all(
         cacheNames.filter(function(thisCache) {
           return thisCache.startsWith('restaurant-') &&
-                 thisCache != cacheName;
+            thisCache != cacheName;
         }).map(function(thisCache) {
           return caches.delete(thisCache);
         })
@@ -46,24 +46,25 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  // console.log('Handling fetch event for', event.request.url);
 
+  // console.log('Handling fetch event for', event.request.url);
 
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      return response || fetch(event.request).then(function(getResponse) {
-        return caches.open(cacheName).then(function(cache) {
-          cache.put(event.request, getResponse.clone());
-          return getResponse;
-        });
-      })
+      return response || fetch(event.request)
+      // .then(function(getResponse) {
+      //   return caches.open(cacheName).then(function(cache) {
+      //     cache.put(event.request, getResponse.clone());
+      //     return getResponse;
+      //   });
+      // })
 
-      }).catch(function(error) {
+    }).catch(function(error) {
 
-        // Handles exceptions that arise from match() or fetch().
-        console.error('Error in fetch handler:', error);
+      // Handles exceptions from match() or fetch().
+      // console.error('Error in fetch handler:', error);
 
-        return new Response ("No connection");
-      })
-    );
-  });
+      return new Response("No connection");
+    });
+  );
+});
